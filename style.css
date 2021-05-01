@@ -1,0 +1,159 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background: linear-gradient(45deg,rgb(199, 119, 0),rgb(106, 3, 175));
+}
+body h1{
+    color: white;
+}
+.container{
+    min-height: 100vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: 100%;
+    align-items:center ;
+ 
+}
+.card{
+    width: 300px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 20px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: 2s;
+    margin-top: 30px;
+}
+.card:hover .face.back{
+    transform: rotatey(0deg);
+}
+.card:hover .face.front{
+    transform: rotatey(-180deg);
+}
+.card .face.front,
+.card .face.back{
+    position:absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items:center;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: 1s;
+}
+.card .face.front img{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.card .face.back{
+    background: rgb(22, 22, 22);
+    transform: rotateY(180deg);
+    /* perspective: 1000px;
+    transform-style: preserve-3d; */
+}
+.imgthum{
+    height: 170px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    border-radius: 20px;
+}
+.imgthum img{
+    height: 170px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    border-radius: 20px 20px 0 0;
+    object-fit: cover;
+}
+.card .face.back .imgbox{
+    height:170px;
+    width: 170px;
+    border-radius: 50%;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    padding: 10px;
+    background: white;
+    transform: translateZ(50px);
+    position: absolute;
+    top: 90px;
+}
+.card .face.back .imgbox img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.card .face.back .content{
+    text-align: center;
+    color: white;
+    text-align: center;
+    transform-style: preserve-3d;
+    transform: translateZ(50px);
+    margin-top: 220px;
+}
+.card .face.back .content h2:after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 35px;
+    transform: translateX(-50%);
+    background: white;
+    width: 50px;
+    height: 2px;
+    margin: 5px 0 5px 0;
+}
+.card .face.back .content p{
+    margin-top: 10px;
+}
+.card .face.back .social i{
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+    font-size: 18px;
+    margin: 0 2px;
+    color: white;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: translateZ(50px);
+    transition: .3s;
+}
+.card .face.back .social i:hover{
+    background: white;
+    color: black;
+}
+.social i.fab.fa-facebook-f {
+    background: #4A689F;
+}
+.social i.fab.fa-twitter {
+    background: #00A7E7;
+}
+.social i.fab.fa-instagram {
+    background: #8E38BB;
+}
+.social i.fab.fa-linkedin-in{
+    background: #0177B6;
+}
